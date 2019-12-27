@@ -44,32 +44,38 @@ function start() {
                 }
             ])
                 .then(function (answers) {
-                    connection.query("SELECT * FROM products Where ?",[{item_id: answers.id}], 
+                    connection.query("SELECT * FROM products Where ?", [{ item_id: answers.id }],
                         function (err, results) {
+                            var quantityNeeded = answers.quantity;
                             if (err) throw err;
+
+                            if (quantityNeeded >= results[0].stock_quantity) {
+                                console.log("\n---------------------------");
+                                console.log("\n---------------------------");
+                                console.log("\nInsufficient quantity!!");
+                                console.log("\nPlease enter another amount.");
+                                console.log("\n---------------------------");
+                                console.log("\n---------------------------");
+                                start();
+                            }else{
+
                             console.table(results);
-                            console.log(results[0].stock_quantity);
+                            // console.log(results[0].stock_quantity);
+                            var cost = quantityNeeded * results[0].price.toFixed(2);
+                            console.log(`\nPrice of product: $ ${cost}`);
 
                             var updatedStock = results[0].stock_quantity - answers.quantity;
-                            console.log(updatedStock); 
-                            connection.query("UPDATE products set ? where ?",[{stock_quantity: updatedStock}, {item_id: results[0].item_id}], function (err, finalResults){
-                                
-                            start();    
+                            console.log("\n" ,updatedStock);
+                            connection.query("UPDATE products set ? where ?", [{ stock_quantity: updatedStock }, { item_id: results[0].item_id }], function (err, finalResults) {
+
                             })
                             
+                            start();
                         }
-
-
+                    }
                     )
 
                 })
-
-            // for (var i = 0; i < res.length; i++){
-            // console.log(res[i].item_id + " || " + res[i].product_name + " ||" + res[i].department_name + " || " + res[i].price + " || " + res[i].stock_quantity);
-            // }
-
         })
 
-
-        
 }
