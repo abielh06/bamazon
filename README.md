@@ -24,7 +24,7 @@
         -mysql
         -console.table
 
-Video of the demo- https://drive.google.com/file/d/1bv-zfmGF4okP4N3UVnGnbNJi8J2mBRR6/view
+[Project Demo](https://drive.google.com/file/d/1bv-zfmGF4okP4N3UVnGnbNJi8J2mBRR6/view)
 
 Created by: Abiel Hailemariam
         
