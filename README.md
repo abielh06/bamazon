@@ -1,8 +1,9 @@
 # bamazon
 
+# About
 * CLI application of hypothetical online store that mimics an Amazon like online store using Node JS and MySql.
 
-* Functionality
+# Functionality
     1. Prints the products in the store.
 
     2. Prompts customer which product they would like to     purchase by ID number.
@@ -24,7 +25,7 @@
         -mysql
         -console.table
 
-[Project Demo](https://drive.google.com/file/d/1bv-zfmGF4okP4N3UVnGnbNJi8J2mBRR6/view)
+# [Project Demo](https://drive.google.com/file/d/1bv-zfmGF4okP4N3UVnGnbNJi8J2mBRR6/view)
 
 Created by: Abiel Hailemariam
         
