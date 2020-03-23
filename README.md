@@ -6,7 +6,7 @@
 # Functionality
     1. Prints the products in the store.
 
-    2. Prompts customer which product they would like to     purchase by ID number.
+    2. Prompts customer which product they would like to purchase by ID number.
 
     3. Asks for the quantity.
 
