@@ -1,9 +1,10 @@
-# bamazon
+# Bamazon
 
 # About
 * CLI application of hypothetical online store that mimics an Amazon like online store using Node JS and MySql.
 
 # Functionality
+    * Bamazon Customer
     1. Prints the products in the store.
 
     2. Prompts customer which product they would like to purchase by ID number.
@@ -15,6 +16,8 @@
 
     5. If the purchase goes through, it updates the stock quantity to reflect the purchase.
     It will also update the product sales in the department table.
+
+    * Bamazon Manager
 
 # Technology used
     1. Javascript
