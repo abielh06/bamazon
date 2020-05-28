@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "password",
+    password: "",
     database: "bamazon_DB"
 })
 connection.connect(function (err) {
@@ -56,8 +56,7 @@ function viewStock() {
                     connection.query("UPDATE products SET stock_quantity = 20 where stock_quantity <= 15" , function(err, lastres){
                         if(err) throw err; 
                         console.log(lastres)
-                        console.log("\n Select Products option to see changes");
-                        
+                        console.log("\n Select Products option to see changes"); 
                     })
                 }
                 updateProduct();
@@ -66,7 +65,6 @@ function viewStock() {
             else{
                 connection.end();
             }
-            
         })
     })
 }
