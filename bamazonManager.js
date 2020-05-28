@@ -14,7 +14,7 @@ connection.connect(function (err) {
     console.log("connected as id " + connection.threadId + "\n");
     viewStock();
 });
-var inputs;
+
 
 function viewStock() {
     connection.query("SELECT * FROM products", function (err, res) {
